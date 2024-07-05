@@ -40,7 +40,19 @@ jobs:
         with:
            repository: AnoopHegde/pe-actions-deploy
            path: pe-actions
-           token: ${{ steps.generate-token.outputs.token }}   
+           token: ${{ steps.generate-token.outputs.token }}
+           
+      - name: Inject Variables
+        uses: lindluni/actions-variable-groups@v2
+        with:
+          groups: |
+             .github/variables/kafka-var.yml
+
+      - uses: joshjohanning/replace-tokens@v1.4
+        with:
+          tokenPrefix: '{{'
+          tokenSuffix: '}}'
+          files: '["**/*-manifest.yaml"]'                
            
       - name: Plan
         id: plan
