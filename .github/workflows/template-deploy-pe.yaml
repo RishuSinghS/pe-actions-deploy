@@ -12,10 +12,10 @@ on:
         description: The environment to be created
         required: true
         type: string
-      env:
-        description: provide the env variables
-        required: true
-        type: string  
+      #env:
+      #  description: provide the env variables
+      #  required: true
+      #  type: string  
 
            
 jobs:

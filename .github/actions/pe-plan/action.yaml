@@ -28,8 +28,8 @@ runs:
       with:
         python-version: 3.11
 
-    - uses: cschleiden/replace-tokens@v1
-      with:
-        tokenPrefix: '#{'
-        tokenSuffix: '}#'
-        files: '["**/*-manifest.yaml"]'    
+  #  - uses: cschleiden/replace-tokens@v1
+  #    with:
+  #      tokenPrefix: '#{'
+  #      tokenSuffix: '}#'
+  #      files: '["**/*-manifest.yaml"]'    
