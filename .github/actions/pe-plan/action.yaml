@@ -1,0 +1,35 @@
+---
+name: "PE : Test Plan"
+description: PE action for platform engineering
+inputs:
+  manifestPath:
+    description: The path to the PE Manifest YAML File
+    required: true
+  environment:
+    description: The environment name to deploy to
+    required: true  
+  debug:
+    description: Run in debug mode, with extra logs
+    required: false
+
+branding:
+  icon: "terminal"
+  color: "yellow"
+
+runs:
+  using: "composite"  
+
+  steps:
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.11
+
+    - uses: cschleiden/replace-tokens@v1
+      with:
+        tokenPrefix: '#{'
+        tokenSuffix: '}#'
+        files: '["**/*-manifest.yaml"]'    

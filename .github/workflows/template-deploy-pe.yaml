@@ -1,0 +1,48 @@
+---
+name: PE Template Deploy
+
+on:
+  workflow_call:
+    inputs:
+      manifestPath:
+        description: The path to the PE Manifest YAML file
+        required: true
+        type: string  
+      environment:
+        description: The environment to be created
+        required: true
+        type: string 
+       
+
+jobs:
+  testdeploy:
+    name: "Test Job"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Generate a token
+        id: generate-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.GHA_APPID }}
+          private-key: ${{ secrets.GHA_APPKEY }}
+          owner: AnoopHegde   
+
+      - name: Checkout
+        uses: actions/checkout@v3 
+
+      - name: Checkout PE actions
+        uses: actions/checkout@v3
+        with:
+           repository: AnoopHegde/pe-actions-deploy
+           path: pe-actions
+           token: ${{ steps.generate-token.outputs.token }}   
+           
+      - name: Plan
+        id: plan
+        uses: ./pe-actions/.github/actions/pe-plan
+        with:
+          manifestPath: ${{ inputs.manifestPath }}
+          environment: ${{ inputs.environment }}
+
+        
