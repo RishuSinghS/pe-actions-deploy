@@ -11,9 +11,14 @@ on:
       environment:
         description: The environment to be created
         required: true
-        type: string 
-       
+        type: string
+      env:
+        description: provide the env variables
+        required: true
+        type: string  
 
+env:
+           
 jobs:
   testdeploy:
     name: "Test Job"
