@@ -48,12 +48,12 @@ jobs:
      #     groups: |
      #        .github/variables/kafka-var.yml
 
-      - uses: cschleiden/replace-tokens@v1
+      #- uses: cschleiden/replace-tokens@v1
         #env:
         #  APIURL: ${{ vars.APIURL }}
         #  PRINCIPAL_ID: ${{ vars.PRINCIPAL_ID }}
         #  REPLICATION_NAME: ${{ vars.REPLICATION_NAME }}
-      #- uses: joshjohanning/replace-tokens@v1.4
+      - uses: joshjohanning/replace-tokens@v1.4
         #env:
         #  APIURL: ${{ vars.APIURL }}
         #  PRINCIPAL_ID: ${{ vars.PRINCIPAL_ID }}
