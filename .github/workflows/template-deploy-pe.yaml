@@ -50,9 +50,9 @@ jobs:
 
       - uses: cschleiden/replace-tokens@v1
         env:
-          APIURL: ${{ secrets.APIURL }}
-          PRINCIPAL_ID: ${{ secrets.PRINCIPAL_ID }}
-          REPLICATION_NAME: ${{ secrets.REPLICATION_NAME }}
+          APIURL: ${{ vars.APIURL }}
+          PRINCIPAL_ID: ${{ vars.PRINCIPAL_ID }}
+          REPLICATION_NAME: ${{ vars.REPLICATION_NAME }}
       #- uses: joshjohanning/replace-tokens@v1.4
         #env:
         #  APIURL: ${{ vars.APIURL }}
