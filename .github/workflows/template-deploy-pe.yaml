@@ -49,8 +49,8 @@ jobs:
      #        .github/variables/kafka-var.yml
 
       - uses: joshjohanning/replace-tokens@v1.4
-        env:
-          ENV: ${{ vars.npd }}
+        #env:
+        #  ENV: ${{ vars.npd }}
         with:
           tokenPrefix: '{{'
           tokenSuffix: '}}'
