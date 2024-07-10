@@ -52,7 +52,10 @@ jobs:
         with:
           tokenPrefix: '{{'
           tokenSuffix: '}}'
-          files: '["**/*-manifest.yaml"]'                
+          files: '["**/*-manifest.yaml"]'  
+
+      - name: cat after
+        run: cat test-manifest.yaml                  
            
       - name: Plan
         id: plan
