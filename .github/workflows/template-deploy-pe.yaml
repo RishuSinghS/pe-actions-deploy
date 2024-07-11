@@ -44,10 +44,10 @@ jobs:
      #        .github/variables/kafka-var.yml
 
       - uses: joshjohanning/replace-tokens@v1.4
-        env:
-          APIURL: ${{ vars.APIURL }}
-          PRINCIPAL_ID: ${{ vars.PRINCIPAL_ID }}
-          REPLICATION_NAME: ${{ vars.REPLICATION_NAME }} 
+        #env:
+        #  APIURL: ${{ vars.APIURL }}
+        #  PRINCIPAL_ID: ${{ vars.PRINCIPAL_ID }}
+        #  REPLICATION_NAME: ${{ vars.REPLICATION_NAME }} 
         with:
           tokenPrefix: '{{'
           tokenSuffix: '}}'
