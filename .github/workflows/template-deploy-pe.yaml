@@ -12,12 +12,7 @@ on:
         description: The environment to be created
         required: true
         type: string
-      #env:
-      #  description: provide the env variables
-      #  required: true
-      #  type: string  
 
-           
 jobs:
   testdeploy:
     name: "Test Job"
@@ -48,11 +43,6 @@ jobs:
      #     groups: |
      #        .github/variables/kafka-var.yml
 
-      #- uses: cschleiden/replace-tokens@v1
-        #env:
-        #  APIURL: ${{ vars.APIURL }}
-        #  PRINCIPAL_ID: ${{ vars.PRINCIPAL_ID }}
-        #  REPLICATION_NAME: ${{ vars.REPLICATION_NAME }}
       - uses: joshjohanning/replace-tokens@v1.4
         #env:
         #  APIURL: ${{ vars.APIURL }}

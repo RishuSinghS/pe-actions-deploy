@@ -27,9 +27,3 @@ runs:
     - uses: actions/setup-python@v4
       with:
         python-version: 3.11
-
-  #  - uses: cschleiden/replace-tokens@v1
-  #    with:
-  #      tokenPrefix: '#{'
-  #      tokenSuffix: '}#'
-  #      files: '["**/*-manifest.yaml"]'    
