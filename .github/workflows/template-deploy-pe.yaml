@@ -12,6 +12,10 @@ on:
         description: The environment to be created
         required: true
         type: string
+      env_file:
+        description: The environment variables to be created
+        required: true
+        type: string
 
 jobs:
   testdeploy:
